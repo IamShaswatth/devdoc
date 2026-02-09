@@ -1,0 +1,108 @@
+    1  sudo apt update
+    2  sudo apt install git
+    3  sudo apt install neofetch
+    4  neofetch
+    5  sudo apt install apache2 -y
+    6  su root
+    7  sudo apt update
+    8  su root
+    9  su
+   10  sha2005
+   11  su
+   12  su 
+   13  su root
+   14  sudo -i
+   15  cat one.txt
+   16  pwd
+   17  ls -l
+   18  ls -a
+   19  ls
+   20  cd Desktop
+   21  ls
+   22  mkdir dev
+   23  ls
+   24  cd dev
+   25  ls
+   26  ls -a
+   27  touch one.txt
+   28  vim one.txt
+   29  sudo apt install vim
+   30  vim one.txt
+   31  cat one.txt
+   32  cd ..
+   33  ls
+   34  rmdir dev
+   35  rmdir -rdf dev
+   36  rmdir --help
+   37  rm -rf dev
+   38  ls
+   39  mkdir new
+   40  ls
+   41  mkdir dev
+   42  cd dev
+   43  touch one.txt
+   44  ls
+   45  cp one.txt ../new/
+   46  cd ../new/
+   47  ls
+   48  ls *.??
+   49  ls *.???
+   50  touch two .txt
+   51  mv two.txt ../dev/
+   52  ls
+   53  touch two.txt
+   54  ls
+   55  mv two.txt ../dev/
+   56  ls ../dev/
+   57  history
+   58  if config
+   59  ifconfig
+   60  sudo apt install net-tools
+   61  ifconfig
+   62  ls
+   63  cd Desktop/day1
+   64  cd Desktop/
+   65  mkdir day1
+   66  cd day1/
+   67  git clone https://github.com/IamShaswatth/sample.git
+   68  ls
+   69  cd sample
+   70  ls
+   71  git status
+   72  git config --global user.name "shaswatthd@gmail.com"
+   73  git config --global user.email "shaswatthd@gmail.com"
+   74  tocuh one .txt
+   75  touch one.txt
+   76  ls
+   77  git add .
+   78  git commit -m "file one.txt is pushed from vm"
+   79  git remote add origin  https://github.com/IamShaswatth/sample.git
+   80  git push -u origin main
+   81  ssh-keygen -t ed25519
+   82  cat ~/.ssh/id_ed25519.pub
+   83  git remote -v
+   84  git push
+   85  git remote add origin git@github.com:IamShaswatth/sample.git
+   86  git remote -v
+   87  eval "$(ssh-agent -s)"
+   88  ssh-add ~/.ssh/id_ed25519
+   89  ssh -vT git@github.com
+   90  git push -u origin main
+   91  ls
+   92  cd Desktop/day1/
+   93  git status
+   94  cd sample/
+   95  ls
+   96  git status
+   97  git remote remove origin
+   98  git remote -v
+   99  git remote add origin git@github.com:IamShaswatth/sample.git
+  100  git remote -v
+  101  git config --global --unset credential.helper
+  102  git config --global --unset credential.helper 2?/dev/null
+  103  git config --global url."git@github.com:".insteadOf"https://github.com/"
+  104  git config --global url."git@github.com:".insteadof"https://github.com/"
+  105  git config --global url."git@github.com:".insteadof https://github.com/
+  106  ls
+  107  git push -u origin main
+  108  history > day-1.txt
