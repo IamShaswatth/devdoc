@@ -1,0 +1,10 @@
+    1  ls
+    2  ls -a
+    3  mkdir dev
+    4  ls
+    5  cd dev
+    6  git clone https://github.com/IamShaswatth/sample.git .
+    7  git status
+    8  ls
+    9  touch day 2 .txt
+   10  history > day2.txt
