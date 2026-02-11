@@ -1,0 +1,31 @@
+    1  ls
+    2  ls -a
+    3  mkdir dev
+    4  ls
+    5  cd dev
+    6  git clone https://github.com/IamShaswatth/sample.git .
+    7  git status
+    8  ls
+    9  touch day 2 .txt
+   10  history > day2.txt
+   11  cat day2.txt
+   12  git add .
+   13  git commit -m "history commands added from vs code connected to UBUNTU"
+   14  git config --global user.email "shaswatthd@gmail.com"
+   15  git config --global user.name "IamShaswatth"
+   16  git commit -m "history commands added from vs code connected to UBUNTU"
+   17  git push -u origin main
+   18  ls
+   19  ls -a
+   20  ls
+   21  cd docker_sample/
+   22  ls
+   23  docker images
+   24  docker ps
+   25  cd docker_sample/
+   26  ls
+   27  docker ps
+   28  docker run -p 3000:3000 docker_sample
+   29  docker ps
+   30  docker run -d -p 3000:3000 docker_sample
+   31  docker ps
