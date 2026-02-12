@@ -288,7 +288,116 @@ docker history <image-name>
 </details>
 
 <details>
-<summary><b>📦 Docker Container Commands</b></summary>
+<summary><b>� Hands-On: Running Nginx Container</b></summary>
+
+### Hands-On: Running Nginx Container
+
+This practical guide walks you through creating and running an Nginx web server container, and modifying its content using Docker commands.
+
+#### Step 1: Pull and Create Your First Container
+
+First, let's pull the Nginx image and create your first container:
+
+```bash
+# Pull nginx image from Docker Hub
+docker pull nginx
+
+# Run nginx container with port mapping
+docker run -d -p 8080:80 --name my-nginx nginx
+
+# Verify the container is running
+docker ps
+```
+
+![First Container Running](docker%20images/first%20container.png)
+
+**What's happening here:**
+- `-d`: Runs the container in detached mode (background)
+- `-p 8080:80`: Maps port 8080 on your host to port 80 in the container
+- `--name my-nginx`: Gives the container a friendly name
+- The container is now serving the default Nginx welcome page at `http://localhost:8080`
+
+#### Step 2: Using Docker Exec to Modify Content
+
+Now let's use `docker exec` to access the running container and modify the Nginx HTML content:
+
+```bash
+# Access the container with an interactive bash shell
+docker exec -it my-nginx bash
+
+# Inside the container, navigate to the HTML directory
+cd /usr/share/nginx/html
+
+# View the current content
+cat index.html
+
+# Modify the HTML file (you might need to install an editor first)
+echo "<h1>Hello from Docker!</h1>" > index.html
+
+# Exit the container
+exit
+```
+
+![Using Docker Exec Command](docker%20images/docker%20exec.png)
+
+**Alternative: Modify without entering the container:**
+```bash
+# Execute a single command to update the HTML
+docker exec my-nginx bash -c "echo '<h1>Modified with Docker Exec!</h1>' > /usr/share/nginx/html/index.html"
+```
+
+#### Step 3: Verify the Changes
+
+Visit `http://localhost:8080` in your browser to see your changes, or use curl:
+
+```bash
+curl http://localhost:8080
+```
+
+#### Step 4: Working with Container Files
+
+```bash
+# Copy files from host to container
+docker cp ./myfile.html my-nginx:/usr/share/nginx/html/
+
+# Copy files from container to host
+docker cp my-nginx:/usr/share/nginx/html/index.html ./backup.html
+
+# View container logs
+docker logs my-nginx
+
+# View real-time logs
+docker logs -f my-nginx
+```
+
+#### Step 5: Container Management
+
+```bash
+# Stop the container
+docker stop my-nginx
+
+# Start it again
+docker start my-nginx
+
+# Restart the container
+docker restart my-nginx
+
+# Remove the container (must be stopped first)
+docker stop my-nginx
+docker rm my-nginx
+```
+
+#### Key Takeaways
+
+- **docker exec**: Allows you to run commands inside a running container
+- **Port Mapping**: `-p host_port:container_port` makes services accessible from your host
+- **Detached Mode**: `-d` runs containers in the background
+- **Interactive Mode**: `-it` provides an interactive terminal session
+
+</details>
+
+<details>
+<summary><b>�📦 Docker Container Commands</b></summary>
 
 ### Docker Container Commands
 
