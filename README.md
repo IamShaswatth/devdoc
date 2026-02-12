@@ -1,23 +1,32 @@
+# DevOps Learning Documentation
 
-# Jenkins Learning Documentation
+A comprehensive guide to Jenkins and Docker for continuous integration, continuous delivery, and containerization.
 
 ## Table of Contents
-- [Introduction](#introduction)
-- [Jenkins Installation](#jenkins-installation)
-- [Creating Your First Build](#creating-your-first-build)
-- [Upstream and Downstream Projects](#upstream-and-downstream-projects)
-- [Build Configuration](#build-configuration)
-- [Viewing Build Output](#viewing-build-output)
+- [Jenkins - CI/CD Automation](#jenkins---cicd-automation)
+- [Docker - Containerization](#docker---containerization)
 
-## Introduction
+---
 
-This documentation provides a step-by-step guide to learning Jenkins, a popular open-source automation server used for continuous integration and continuous delivery (CI/CD).
+## Jenkins - CI/CD Automation
 
-## Jenkins Installation
+<details>
+<summary><b>📖 Introduction to Jenkins</b></summary>
+
+### Introduction
+
+Jenkins is a popular open-source automation server used for continuous integration and continuous delivery (CI/CD). This documentation provides a step-by-step guide to learning Jenkins and building automated pipelines.
+
+</details>
+
+<details>
+<summary><b>⚙️ Jenkins Installation</b></summary>
+
+### Jenkins Installation
 
 Jenkins can be installed on various platforms including Linux, Windows, and macOS. The installation process involves downloading Jenkins and configuring it to run as a service.
 
-### Installation Screenshot
+#### Installation Screenshot
 
 ![Jenkins Installation](jenkins%20screenshot/jenkins%20intallation.png)
 
@@ -27,11 +36,16 @@ Jenkins can be installed on various platforms including Linux, Windows, and macO
 3. Set up Jenkins and configure initial settings
 4. Create admin user and install recommended plugins
 
-## Creating Your First Build
+</details>
+
+<details>
+<summary><b>🔨 Creating Your First Build</b></summary>
+
+### Creating Your First Build
 
 Once Jenkins is installed, you can create your first build job to understand how Jenkins automation works.
 
-### Build Configuration
+#### Build Configuration
 
 ![My First Build](jenkins%20screenshot/my%20first%20build.png)
 
@@ -43,7 +57,7 @@ Once Jenkins is installed, you can create your first build job to understand how
 5. Add build steps (shell commands, scripts, etc.)
 6. Save the configuration
 
-### Build Output
+#### Build Output
 
 After running your first build, you can view the console output to see the execution details.
 
@@ -55,11 +69,16 @@ After running your first build, you can view the console output to see the execu
 - Execution time and timestamps
 - Any errors or warnings during the build process
 
-## Upstream and Downstream Projects
+</details>
+
+<details>
+<summary><b>🔗 Upstream and Downstream Projects</b></summary>
+
+### Upstream and Downstream Projects
 
 Jenkins supports project dependencies where one project can trigger another project after completion.
 
-### Upstream and Downstream Configuration
+#### Upstream and Downstream Configuration
 
 ![Upstream and Downstream Images](jenkins%20screenshot/upstream%20and%20downstream%20images.png)
 
@@ -68,7 +87,7 @@ Jenkins supports project dependencies where one project can trigger another proj
 - **Downstream Project**: The project that gets triggered by another project
 - This creates a build pipeline where projects execute in sequence
 
-### Configuring Upstream Projects
+#### Configuring Upstream Projects
 
 ![Build Configuration for Upstream](jenkins%20screenshot/build%20sonfiguraation%20for%20upstram.png)
 
@@ -80,7 +99,12 @@ Jenkins supports project dependencies where one project can trigger another proj
 5. Choose trigger conditions (stable build, always, etc.)
 6. Save the configuration
 
-## Best Practices
+</details>
+
+<details>
+<summary><b>✅ Best Practices</b></summary>
+
+### Best Practices
 
 - **Version Control**: Always integrate Jenkins with version control systems
 - **Build Automation**: Automate builds on code commits
@@ -89,15 +113,25 @@ Jenkins supports project dependencies where one project can trigger another proj
 - **Security**: Properly configure user permissions and credentials
 - **Backup**: Regular backup of Jenkins configuration and jobs
 
-## Troubleshooting
+</details>
 
-### Common Issues:
+<details>
+<summary><b>🔧 Troubleshooting</b></summary>
+
+### Troubleshooting
+
+#### Common Issues:
 - **Build Failures**: Check console output for error messages
 - **Permission Issues**: Verify user permissions and file access
 - **Plugin Conflicts**: Update plugins or check compatibility
 - **Resource Issues**: Monitor system resources (CPU, memory, disk space)
 
-## Future Workflow
+</details>
+
+<details>
+<summary><b>🚀 Future Workflow</b></summary>
+
+### Future Workflow
 
 As you advance in your Jenkins journey, you'll create more complex CI/CD pipelines that integrate multiple stages, automated testing, and deployment processes.
 
@@ -114,17 +148,565 @@ As you advance in your Jenkins journey, you'll create more complex CI/CD pipelin
 
 This workflow diagram illustrates how Jenkins orchestrates the entire continuous integration and continuous deployment process, ensuring code quality and rapid delivery.
 
-## Additional Resources
+</details>
+
+<details>
+<summary><b>📚 Additional Resources</b></summary>
+
+### Additional Resources
 
 - [Jenkins Official Documentation](https://www.jenkins.io/doc/)
 - [Jenkins Plugins Repository](https://plugins.jenkins.io/)
 - [Jenkins Community Forums](https://community.jenkins.io/)
 
+</details>
+
+---
+
+## Docker - Containerization
+
+<details>
+<summary><b>📖 Introduction to Docker</b></summary>
+
+### Introduction
+
+Docker is a platform for developing, shipping, and running applications in containers. Containers allow you to package an application with all its dependencies into a standardized unit for software development.
+
+</details>
+
+<details>
+<summary><b>⚙️ Docker Installation</b></summary>
+
+### Docker Installation
+
+#### Install Docker on Linux
+```bash
+# Update package index
+sudo apt-get update
+
+# Install Docker
+sudo apt-get install docker.io
+
+# Start Docker service
+sudo systemctl start docker
+
+# Enable Docker to start on boot
+sudo systemctl enable docker
+
+# Verify installation
+docker --version
+```
+
+#### Add user to Docker group (to run without sudo)
+```bash
+sudo usermod -aG docker $USER
+```
+
+</details>
+
+<details>
+<summary><b>🖼️ Docker Image Commands</b></summary>
+
+### Docker Image Commands
+
+#### List Images
+```bash
+# List all images
+docker images
+
+# List all images (including intermediate)
+docker images -a
+```
+
+#### Pull an Image from Docker Hub
+```bash
+# Pull latest version
+docker pull <image-name>
+
+# Pull specific version
+docker pull <image-name>:<tag>
+
+# Examples
+docker pull ubuntu
+docker pull nginx:latest
+docker pull node:18
+```
+
+#### Build an Image from Dockerfile
+```bash
+# Build image from current directory
+docker build -t <image-name>:<tag> .
+
+# Build with specific Dockerfile
+docker build -f Dockerfile -t <image-name> .
+
+# Example
+docker build -t myapp:1.0 .
+```
+
+#### Remove Images
+```bash
+# Remove single image
+docker rmi <image-id>
+
+# Remove multiple images
+docker rmi <image-id1> <image-id2>
+
+# Remove all unused images
+docker image prune
+
+# Remove all images
+docker rmi $(docker images -q)
+```
+
+#### Tag an Image
+```bash
+docker tag <source-image>:<tag> <target-image>:<tag>
+```
+
+#### Push Image to Docker Hub
+```bash
+# Login to Docker Hub
+docker login
+
+# Push image
+docker push <username>/<image-name>:<tag>
+```
+
+#### Other Image Commands
+```bash
+# Search for images
+docker search <image-name>
+
+# Inspect an image
+docker image inspect <image-name>
+
+# View image history
+docker history <image-name>
+```
+
+</details>
+
+<details>
+<summary><b>📦 Docker Container Commands</b></summary>
+
+### Docker Container Commands
+
+#### Run a Container
+```bash
+# Run container in foreground
+docker run <image-name>
+
+# Run container in background (detached mode)
+docker run -d <image-name>
+
+# Run container with custom name
+docker run --name <container-name> <image-name>
+
+# Run with port mapping
+docker run -p <host-port>:<container-port> <image-name>
+
+# Run with environment variables
+docker run -e KEY=VALUE <image-name>
+
+# Run with volume mount
+docker run -v <host-path>:<container-path> <image-name>
+
+# Run interactive container with terminal
+docker run -it <image-name> /bin/bash
+
+# Example: Run nginx
+docker run -d -p 8080:80 --name my-nginx nginx
+```
+
+#### List Containers
+```bash
+# List running containers
+docker ps
+
+# List all containers (including stopped)
+docker ps -a
+
+# List latest created container
+docker ps -l
+```
+
+#### Container Lifecycle
+```bash
+# Stop container
+docker stop <container-id>
+
+# Start container
+docker start <container-id>
+
+# Restart container
+docker restart <container-id>
+
+# Pause/Unpause container
+docker pause <container-id>
+docker unpause <container-id>
+```
+
+#### Remove Container
+```bash
+# Remove stopped container
+docker rm <container-id>
+
+# Force remove running container
+docker rm -f <container-id>
+
+# Remove all stopped containers
+docker container prune
+
+# Remove all containers
+docker rm $(docker ps -aq)
+```
+
+#### Execute Command in Running Container
+```bash
+# Execute command
+docker exec <container-id> <command>
+
+# Interactive shell
+docker exec -it <container-id> /bin/bash
+docker exec -it <container-id> sh
+```
+
+#### View Container Logs
+```bash
+# View logs
+docker logs <container-id>
+
+# Follow logs (real-time)
+docker logs -f <container-id>
+
+# View last N lines
+docker logs --tail 100 <container-id>
+```
+
+#### Other Container Commands
+```bash
+# Inspect container
+docker inspect <container-id>
+
+# View container resource usage (real-time stats)
+docker stats
+docker stats <container-id>
+
+# Copy files between container and host
+docker cp <container-id>:<container-path> <host-path>
+docker cp <host-path> <container-id>:<container-path>
+
+# Rename container
+docker rename <old-name> <new-name>
+
+# View container processes
+docker top <container-id>
+```
+
+</details>
+
+<details>
+<summary><b>🌐 Docker Network Commands</b></summary>
+
+### Docker Network Commands
+
+```bash
+# List networks
+docker network ls
+
+# Create network
+docker network create <network-name>
+docker network create --driver bridge <network-name>
+
+# Inspect network
+docker network inspect <network-name>
+
+# Connect container to network
+docker network connect <network-name> <container-id>
+
+# Disconnect container from network
+docker network disconnect <network-name> <container-id>
+
+# Remove network
+docker network rm <network-name>
+
+# Remove all unused networks
+docker network prune
+```
+
+</details>
+
+<details>
+<summary><b>💾 Docker Volume Commands</b></summary>
+
+### Docker Volume Commands
+
+```bash
+# List volumes
+docker volume ls
+
+# Create volume
+docker volume create <volume-name>
+
+# Inspect volume
+docker volume inspect <volume-name>
+
+# Remove volume
+docker volume rm <volume-name>
+
+# Remove all unused volumes
+docker volume prune
+```
+
+#### Run Container with Volume
+```bash
+# Named volume
+docker run -v <volume-name>:<container-path> <image-name>
+
+# Bind mount
+docker run -v <host-path>:<container-path> <image-name>
+
+# Read-only volume
+docker run -v <volume-name>:<container-path>:ro <image-name>
+```
+
+</details>
+
+<details>
+<summary><b>📝 Dockerfile Commands</b></summary>
+
+### Dockerfile Commands
+
+#### Common Dockerfile Instructions
+
+```dockerfile
+# Base image
+FROM ubuntu:20.04
+
+# Set maintainer
+LABEL maintainer="your-email@example.com"
+
+# Set working directory
+WORKDIR /app
+
+# Copy files
+COPY . /app
+COPY package.json .
+
+# Add files (with extraction support)
+ADD archive.tar.gz /app
+
+# Run commands during build
+RUN apt-get update && apt-get install -y nodejs
+
+# Set environment variables
+ENV NODE_ENV=production
+ENV PORT=3000
+
+# Expose ports
+EXPOSE 3000
+
+# Set user
+USER node
+
+# Define volume mount points
+VOLUME ["/data"]
+
+# Entry point (always executed)
+ENTRYPOINT ["node"]
+
+# Default command (can be overridden)
+CMD ["app.js"]
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s \
+  CMD curl -f http://localhost/ || exit 1
+
+# Arguments during build
+ARG VERSION=latest
+```
+
+</details>
+
+<details>
+<summary><b>🐙 Docker Compose Commands</b></summary>
+
+### Docker Compose Commands
+
+```bash
+# Start services
+docker-compose up
+docker-compose up -d
+docker-compose up --build
+
+# Stop services
+docker-compose stop
+
+# Down services (stop and remove)
+docker-compose down
+docker-compose down -v
+
+# View running services
+docker-compose ps
+
+# View logs
+docker-compose logs
+docker-compose logs <service-name>
+docker-compose logs -f
+
+# Execute command in service
+docker-compose exec <service-name> <command>
+
+# Build services
+docker-compose build
+
+# Pull images
+docker-compose pull
+
+# Restart services
+docker-compose restart
+
+# Scale services
+docker-compose up -d --scale <service-name>=3
+```
+
+</details>
+
+<details>
+<summary><b>🧹 Docker System Commands</b></summary>
+
+### Docker System Commands
+
+```bash
+# View disk usage
+docker system df
+
+# Clean up everything
+docker system prune
+docker system prune -a --volumes
+
+# Remove all stopped containers
+docker container prune
+
+# Remove all unused images
+docker image prune
+docker image prune -a
+
+# Remove all unused networks
+docker network prune
+
+# Remove all unused volumes
+docker volume prune
+
+# Login/Logout from Docker Registry
+docker login
+docker login <registry-url>
+docker logout
+```
+
+</details>
+
+<details>
+<summary><b>💡 Useful Docker Command Combinations</b></summary>
+
+### Useful Docker Command Combinations
+
+```bash
+# Stop and remove all containers
+docker stop $(docker ps -aq) && docker rm $(docker ps -aq)
+
+# Remove all images
+docker rmi $(docker images -q)
+
+# Remove dangling images
+docker rmi $(docker images -f "dangling=true" -q)
+
+# Enter running container
+docker exec -it $(docker ps -q -f name=<container-name>) /bin/bash
+
+# View container IP address
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container-id>
+
+# Monitor container logs in real-time
+docker logs -f --tail 100 <container-id>
+```
+
+</details>
+
+<details>
+<summary><b>✅ Docker Best Practices</b></summary>
+
+### Best Practices
+
+1. **Keep Images Small**: Use minimal base images like Alpine Linux
+2. **Use .dockerignore**: Exclude unnecessary files from build context
+3. **Layer Caching**: Order Dockerfile commands from least to most frequently changing
+4. **One Process per Container**: Follow microservices architecture
+5. **Use Official Images**: Start with official base images from Docker Hub
+6. **Security**: Don't run containers as root, scan images for vulnerabilities
+7. **Health Checks**: Implement health checks in Dockerfile
+8. **Environment Variables**: Use env variables for configuration
+9. **Volumes for Data**: Use volumes for persistent data
+10. **Multi-stage Builds**: Reduce final image size using multi-stage builds
+
+</details>
+
+<details>
+<summary><b>🔧 Docker Troubleshooting</b></summary>
+
+### Troubleshooting
+
+#### Container Won't Start
+```bash
+# Check logs
+docker logs <container-id>
+
+# Inspect container
+docker inspect <container-id>
+```
+
+#### Out of Disk Space
+```bash
+# Clean up unused resources
+docker system prune -a
+```
+
+#### Permission Denied
+```bash
+# Add user to docker group
+sudo usermod -aG docker $USER
+```
+
+#### Port Already in Use
+```bash
+# Find process using port
+sudo lsof -i :8080
+
+# Use different port mapping
+docker run -p 8081:80 nginx
+```
+
+</details>
+
+<details>
+<summary><b>📚 Docker Additional Resources</b></summary>
+
+### Additional Resources
+
+- [Docker Official Documentation](https://docs.docker.com/)
+- [Docker Hub](https://hub.docker.com/)
+- [Docker Compose Documentation](https://docs.docker.com/compose/)
+- [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/)
+
+</details>
+
+---
+
 ## Conclusion
 
-Jenkins is a powerful tool for automating software development processes. By understanding these basics, you can build more complex CI/CD pipelines to improve your development workflow.
+This documentation covers the essential concepts and commands for both Jenkins and Docker. Together, these tools form a powerful foundation for modern DevOps practices, enabling continuous integration, continuous delivery, and containerized application deployment.
 
 ---
 
 *Last Updated: February 12, 2026*
->>>>>>> af50d25 (jenkins is used on day 4 and doc is added)
