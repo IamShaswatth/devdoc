@@ -1,0 +1,25 @@
+IMAGE                  ID             DISK USAGE   CONTENT SIZE   EXTRA
+doc:1.0                74a0f04277cd        237MB         62.9MB   U    
+doc:1.2                afafc59440cc        237MB         62.9MB   U    
+docker_sample:latest   0dc400b80762        196MB         47.3MB   U    
+hello-world:latest     05813aedc15f       25.9kB         9.52kB   U    
+nginx:latest           341bf0f3ce6c        240MB         65.8MB        
+
+THE ABOVE ONE IS ADDED FROM SCRIPT 
+
+
+BELOW IS THE SCRIPT COMMANDS
+
+echo "this is running from script"
+
+docker images
+docker ps 
+docker images> day-4.txt 
+
+
+
+
+
+
+
+
