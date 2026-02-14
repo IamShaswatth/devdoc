@@ -15,7 +15,7 @@ A comprehensive guide to Jenkins for continuous integration and continuous deliv
 ---
 
 <details>
-<summary><b>📖 Introduction to Jenkins</b></summary>
+<summary><b>Introduction to Jenkins</b></summary>
 
 ### Introduction
 
@@ -24,7 +24,7 @@ Jenkins is a popular open-source automation server used for continuous integrati
 </details>
 
 <details>
-<summary><b>⚙️ Jenkins Installation</b></summary>
+<summary><b>Jenkins Installation</b></summary>
 
 ### Jenkins Installation
 
@@ -43,7 +43,7 @@ Jenkins can be installed on various platforms including Linux, Windows, and macO
 </details>
 
 <details>
-<summary><b>🔨 Creating Your First Build</b></summary>
+<summary><b>Creating Your First Build</b></summary>
 
 ### Creating Your First Build
 
@@ -76,7 +76,7 @@ After running your first build, you can view the console output to see the execu
 </details>
 
 <details>
-<summary><b>🔗 Upstream and Downstream Projects</b></summary>
+<summary><b>Upstream and Downstream Projects</b></summary>
 
 ### Upstream and Downstream Projects
 
@@ -106,7 +106,7 @@ Jenkins supports project dependencies where one project can trigger another proj
 </details>
 
 <details>
-<summary><b>✅ Best Practices</b></summary>
+<summary><b>Best Practices</b></summary>
 
 ### Best Practices
 
@@ -120,7 +120,7 @@ Jenkins supports project dependencies where one project can trigger another proj
 </details>
 
 <details>
-<summary><b>🔧 Troubleshooting</b></summary>
+<summary><b>Troubleshooting</b></summary>
 
 ### Troubleshooting
 
@@ -133,7 +133,7 @@ Jenkins supports project dependencies where one project can trigger another proj
 </details>
 
 <details>
-<summary><b>🚀 Future Workflow</b></summary>
+<summary><b>Future Workflow</b></summary>
 
 ### Future Workflow
 
@@ -155,7 +155,7 @@ This workflow diagram illustrates how Jenkins orchestrates the entire continuous
 </details>
 
 <details>
-<summary><b>📚 Additional Resources</b></summary>
+<summary><b>Additional Resources</b></summary>
 
 ### Additional Resources
 

@@ -1,0 +1,6 @@
+ANSIBLE:
+
+ANSIBLE is a configuration management and automation tool.
+
+ini file is used to define users...
+

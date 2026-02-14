@@ -11,7 +11,7 @@ A comprehensive guide to Docker for containerization and application deployment.
 ---
 
 <details>
-<summary><b>📖 Introduction to Docker</b></summary>
+<summary><b>Introduction to Docker</b></summary>
 
 ### Introduction
 
@@ -20,7 +20,7 @@ Docker is a platform for developing, shipping, and running applications in conta
 </details>
 
 <details>
-<summary><b>⚙️ Docker Installation</b></summary>
+<summary><b>Docker Installation</b></summary>
 
 ### Docker Installation
 
@@ -50,7 +50,7 @@ sudo usermod -aG docker $USER
 </details>
 
 <details>
-<summary><b>🖼️ Docker Image Commands</b></summary>
+<summary><b>Docker Image Commands</b></summary>
 
 ### Docker Image Commands
 
@@ -133,7 +133,7 @@ docker history <image-name>
 </details>
 
 <details>
-<summary><b>🚀 Hands-On: Running Nginx Container</b></summary>
+<summary><b>Hands-On: Running Nginx Container</b></summary>
 
 ### Hands-On: Running Nginx Container
 
