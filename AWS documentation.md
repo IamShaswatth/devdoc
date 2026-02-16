@@ -154,8 +154,6 @@ After setting up the instances, I deployed a sample application to understand th
 
 ---
 
-## 📅 Documentation Date
-Last Updated: February 2026
 
 ---
 
