@@ -1,6 +1,6 @@
 # AWS Learning Journey - EC2 Instance Setup & Deployment
 
-## 📋 Learning Objectives
+## Learning Objectives
 
 - Understand AWS EC2 (Elastic Compute Cloud) fundamentals
 - Learn how to create and configure EC2 instances
@@ -10,13 +10,13 @@
 
 ---
 
-## 🎯 What I Learned
+## What I Learned
 
 This documentation covers my hands-on experience learning AWS EC2 services, from creating my first instance to deploying a sample application. Each step includes the actual process I followed, challenges I encountered, and solutions I implemented.
 
 ---
 
-## 📚 Table of Contents
+## Table of Contents
 
 1. [Setting Up Ubuntu Instance](#1-setting-up-ubuntu-instance)
 2. [Setting Up Windows Instance](#2-setting-up-windows-instance)
@@ -137,15 +137,6 @@ After setting up the instances, I deployed a sample application to understand th
 - **Elastic IP**: Public IP changed on restart until I allocated an Elastic IP
 
 ---
-
-##  Key Takeaways
-
-### What I Mastered:
-- ✅ Creating and configuring EC2 instances (Ubuntu & Windows)
-- ✅ Understanding security groups and network configuration
-- ✅ Connecting to instances using SSH and RDP
-- ✅ Deploying applications on cloud infrastructure
-- ✅ Managing instance states (start, stop, terminate)
 
 ### Best Practices I Learned:
 1. **Always tag your resources** - Makes management much easier
